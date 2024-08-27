@@ -4,13 +4,16 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    transition: background-color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
 }
   
 nav {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 5px 20px; /* Reduce padding to make the header smaller */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between left and right items */
+    align-items: center; /* Center items vertically */
 }
 
 nav ul {
@@ -18,11 +21,10 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 10px; /* Space between navigation items */
 }
 
 nav ul li a {
@@ -43,8 +45,52 @@ nav ul li a:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-button {
-    padding: 10px;
-    margin-top: 20px;
+.hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center items horizontally */
+    text-align: center;
+    padding: 20px; /* Add some padding */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
+}
+
+.light-mode {
+    background-color: #f4f4f4; /* Light background */
+    color: black; /* Light text color */
+}
+
+.dark-mode {
+    background-color: #333; /* Dark background */
+    color: white; /* Dark text color */
+}
+
+.theme-toggle-container {
+    display: flex; /* Ensure the toggle is displayed as a flex container */
+    align-items: center; /* Center the toggle vertically */
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
     cursor: pointer;
+    outline: none;
+    padding: 0; /* Remove padding for the button */
+    display: flex; /* Ensure the icons are aligned */
+    align-items: center; /* Center icons vertically */
+}
+
+.theme-icon {
+    width: 20px; /* Restrict size of icons */
+    height: 20px; /* Restrict size of icons */
+    transition: opacity 0.3s;
+}
+
+.dark-mode #sunIcon {
+    display: none; /* Hide sun icon in dark mode */
+}
+
+.light-mode #moonIcon {
+    display: none; /* Hide moon icon in light mode */
 }
